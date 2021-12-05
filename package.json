@@ -1,0 +1,46 @@
+{
+  "name": "reactjs-boilerplate",
+  "version": "1.0.0",
+  "description": "Boiler Plate for any React JS App.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server": "webpack-dev-server",
+    "webpack_build": "webpack",
+    "webpack_prod": "webpack -p --env production",
+    "heroku-postbuild": "npm run webpack_prod",
+    "start": "node server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/runtime-corejs3": "^7.16.3",
+    "axios": "^0.24.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "core-js": "^3.19.1",
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-sass": "^6.0.1",
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.0.2",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1",
+    "sass-loader": "^12.3.0",
+    "webpack": "^5.64.4"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  }
+}

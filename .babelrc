@@ -1,0 +1,10 @@
+{
+    "presets": [["@babel/preset-env", {
+        "useBuiltIns": "usage", // or "entry"
+        "corejs": 3,
+      }], "@babel/react"],
+    "plugins": ["transform-class-properties",
+                "transform-object-rest-spread",
+                "@babel/plugin-syntax-dynamic-import"
+            ]
+}
