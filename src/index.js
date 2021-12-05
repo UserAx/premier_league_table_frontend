@@ -9,7 +9,7 @@ import './styles/styles.scss';
 // import {setUser} from './actions/user';
 // import User from './mockData/TestData';
 
-export const {store} = configureStore();
+export const store = configureStore();
 
 const JSX = () => (
     <Provider store={store}>
@@ -22,7 +22,7 @@ const renderApp = () => {
 }
 
 renderApp();
-store.dispatch({type: PURGE});
+// store.dispatch({type: PURGE});
 // store.dispatch(setUser(User, User.tokens[0]));
 
 //commit number: 18-fixed-css
