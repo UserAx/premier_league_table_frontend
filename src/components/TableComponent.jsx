@@ -77,7 +77,7 @@ export const TableComponent = (props) => {
                 </thead>
                 <tbody >
                     {tableData.map((data, index, datalist) => {
-                        if(tableOrder === "des") data = tableData[datalist.length - 1 - index];
+                        if(tableOrder === "asc") data = tableData[datalist.length - 1 - index];
 
                         if (data.team.toLowerCase().includes(searchTeam)) return (
                         <tr key={index}>
