@@ -47,7 +47,7 @@ export const TableComponent = (props) => {
 
     const {season = '', searchTeam = '', setModalData} = props;
     
-    const [tableOrder, setTableOrder] = useState("asc");
+    const [tableOrder, setTableOrder] = useState("des");
 
     const data = useSelector((state) => state.league_reducer.results
     .find((result) => result?.name.includes(season)));
@@ -87,8 +87,8 @@ export const TableComponent = (props) => {
                             onClick={() => setModalData(data)}
                             className={
                                 `table__body__team__name 
-                                ${(data.position < 4 && "league__results__table__top__teams")}
-                                ${(data.position > (datalist.length - 4) && "league__results__table__bottom__teams")}`
+                                ${(data.position < 5 && "league__results__table__top__teams")}
+                                ${(data.position > (datalist.length - 3) && "league__results__table__bottom__teams")}`
                             }>{data?.team}</td>
                             
                             <td>{data?.won}</td>
