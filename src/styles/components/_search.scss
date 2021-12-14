@@ -1,0 +1,16 @@
+.search__container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  input {
+    font-size: 1rem;
+    border: 1px solid;
+    padding: 4px 16px;
+    outline: none;
+  }
+  select {
+    background: transparent;
+    border: 1px solid;
+    padding: 0px 6px;
+  }
+}

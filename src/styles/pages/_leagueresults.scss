@@ -1,0 +1,13 @@
+.league__results__page {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0rem;
+}
+
+.league__results__container {
+  display: flex;
+  flex-direction: column;
+  svg {
+    margin-bottom: 1rem;
+  }
+}

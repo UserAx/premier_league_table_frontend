@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import AppRoute from './routes/approute';
+import AppRoute from './routes/AppRoute';
 import configureStore from './store/store';
 import {Provider} from 'react-redux';
 import 'normalize.css/normalize.css';

@@ -27,8 +27,11 @@ module.exports = (env) => {
         module: {
             rules: [{
                 loader: 'babel-loader',
-                test: /\.js$/,
-                exclude: /node_modules/
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                resolve: {
+                    extensions: [".js", ".jsx"]
+                  },
             },
             {
                 test: /\.s?css$/,
@@ -39,8 +42,15 @@ module.exports = (env) => {
                     loader: 'sass-loader',
                     options: {sourceMap: true}
                 }]
-            }
+            },
+            {
+                test: /\.svg/,
+                use: ["@svgr/webpack"],
+              },
         ]},
+        // resolve: {
+        //     extensions: [ '.js', '.jsx'],
+        // },
         plugins: [
             new MiniCssExtractPlugin({
                 filename: 'styles_bundle.css',

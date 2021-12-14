@@ -1,0 +1,91 @@
+.league__results__table {
+  border: 1px solid;
+  width: 42rem;
+  border-collapse: collapse;
+  // tbody {
+  //   & > :nth-child(-n + 3) {
+  //     background: green;
+  //   }
+  //   & > :nth-last-child(-n + 4) {
+  //     background: red;
+  //   }
+  // }
+  tr {
+    border: 1px solid;
+  }
+  tr > th,
+  td {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+.league__results__table__order {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  & > :nth-child(1) {
+    margin-right: 1rem;
+  }
+  input {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 4px;
+  }
+  label {
+    font-weight: bold;
+  }
+}
+
+.league__results__table__body__asc {
+  & > :nth-child(-n + 3) {
+    background: red;
+  }
+  & > :nth-last-child(-n + 4) {
+    background: green;
+  }
+}
+
+.league__results__table__body__des {
+  & > :nth-child(-n + 4) {
+    background: green;
+  }
+  & > :nth-last-child(-n + 3) {
+    background: red;
+  }
+}
+
+td.table__body__team__name {
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin common__result__styles {
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 2px 4px;
+  font-size: 0.6rem;
+}
+
+.table__body__team__latest__results__container {
+  display: flex;
+  width: 6rem;
+  justify-content: space-evenly;
+}
+
+.table__body__team__latest__results__W {
+  @include common__result__styles();
+  background: green;
+}
+
+.table__body__team__latest__results__D {
+  @include common__result__styles();
+  background: #ffffff;
+}
+
+.table__body__team__latest__results__L {
+  @include common__result__styles();
+  background: red;
+}
