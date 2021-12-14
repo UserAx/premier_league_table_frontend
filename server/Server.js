@@ -4,10 +4,11 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 
-
 const publicDirectory = path.join(__dirname, '..', 'public');
 
 app.use(cors());
+
+app.use(express.static(publicDirectory));
 app.use(express.json());
 
 app.get('*', (req, res) => {

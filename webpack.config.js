@@ -39,13 +39,12 @@ module.exports = (env) => {
         plugins: [
             new MiniCssExtractPlugin({
                 filename: 'styles_bundle.css',
-                chunkFilename: "styles/[id].css"
+                // chunkFilename: "styles/[id].css"
             }),
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
             historyApiFallback: true,
-            
             static: {
                 directory: path.join(__dirname, 'public'),
                 },
