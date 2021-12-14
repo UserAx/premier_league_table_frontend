@@ -9,7 +9,7 @@
     "webpack_build": "webpack",
     "webpack_prod": "webpack -p --env production",
     "heroku-postbuild": "npm run webpack_prod",
-    "start": "node server/server.js"
+    "start": "node server/Server.js"
   },
   "author": "",
   "license": "ISC",
