@@ -41,6 +41,9 @@ module.exports = (env) => {
                 filename: 'styles_bundle.css',
                 // chunkFilename: "styles/[id].css"
             }),
+            new webpack.DefinePlugin({
+                'process.env.BASEURL': JSON.stringify(process.env.BASEURL)  
+            })
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
