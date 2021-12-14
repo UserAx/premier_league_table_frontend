@@ -3,6 +3,7 @@ import generateAxiosInstance from '../utils/AxiosInstance';
 const GET_LEAGUE_RESULT = "GET_LEAGUE_RESULT";
 const baseURL = process.env.BASEURL;
 
+
 const addLeagueResults = (payload) => ({
     type: GET_LEAGUE_RESULT,
     payload
@@ -10,6 +11,7 @@ const addLeagueResults = (payload) => ({
 
 export const fetchLeagueResult = (season = "") => {
     return async (dispatch) => {
+        console.log(baseURL);
         return await generateAxiosInstance(baseURL).get(`/league/season=${season || ''}`)
         .then((result)=> {
             dispatch(addLeagueResults(result.data));
