@@ -51,7 +51,6 @@ export const TableComponent = (props) => {
 
     const data = useSelector((state) => state.league_reducer.results
     .find((result) => result?.name.includes(season)));
-     
 
     const tableData = useMemo(() => processData(data?.rounds), [data]);
 
@@ -78,7 +77,6 @@ export const TableComponent = (props) => {
                 </thead>
                 <tbody >
                     {tableData.map((data, index, datalist) => {
-                        console.log(index);
                         if(tableOrder === "des") data = tableData[datalist.length - 1 - index];
 
                         if (data.team.toLowerCase().includes(searchTeam)) return (
@@ -102,7 +100,7 @@ export const TableComponent = (props) => {
                             <td>{data?.points}</td>
                             <td>
                                 <div className="table__body__team__latest__results__container">
-                                    {data?.lastestresults.map((value, index) => (
+                                    {data?.lastestresults.map((value) => (
                                         <span className={`table__body__team__latest__results__${value.result}`} 
                                         key={value.date}>{value.result}</span>
                                     ))}
