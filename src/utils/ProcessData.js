@@ -64,7 +64,7 @@ export default (rounds = []) => {
         dataLists.push(data);
     });
 
-    dataLists.sort((a, b) => a.points > b.points ? 1 : -1)
+    dataLists.sort((a, b) => a.points < b.points ? 1 : -1)
     .forEach((data, index) => {
         data.position = index + 1;
         return data.lastestresults.sort((a, b) => a.date < b.date ? 1: -1).splice(5)
