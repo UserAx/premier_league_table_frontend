@@ -12,6 +12,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(publicDirectory, 'index.html'));
 });
 
-server.listen(process.env.PORT || PORT, () => {
+server.listen(process.env.PORT || 8080, () => {
     console.log("server is up on");
 });

@@ -66,14 +66,14 @@ export const LeagueResultsPage = () => {
 
             <Modal open={openModal} onClose={onCloseModal} center>
                 <div className="modal__content__container">
-                    {Object.keys(viewResult).map((value) => (
+                    {Object.keys(viewResult).splice(1).map((value, index) => (
                         value === 'team' ? (
                             <h1 
-                            key={value}>{viewResult[value].toUpperCase()}</h1>
+                            key={index}>{viewResult[value].toUpperCase()}</h1>
                         ) : (
                             <div
                             className="modal__content__container__contents"
-                            key={value}>
+                            key={index}>
                                     {value === "lastestresults" ?
                                     <>
                                         <label>LAST 5 GAMES</label>

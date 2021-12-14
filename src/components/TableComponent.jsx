@@ -76,17 +76,23 @@ export const TableComponent = (props) => {
                         {tableHeads.map((head) => (<th key={head.value}>{head.label}</th>))}
                     </tr>
                 </thead>
-                <tbody className={`league__results__table__body__${tableOrder}`}>
+                <tbody >
                     {tableData.map((data, index, datalist) => {
-                        
+                        console.log(index);
                         if(tableOrder === "des") data = tableData[datalist.length - 1 - index];
 
                         if (data.team.toLowerCase().includes(searchTeam)) return (
                         <tr key={index}>
-                            <td>{tableOrder === "des" ? (datalist.length - index) : index+1}</td>
+                            <td>{data?.position}</td>
+
                             <td 
                             onClick={() => setModalData(data)}
-                            className="table__body__team__name">{data?.team}</td>
+                            className={
+                                `table__body__team__name 
+                                ${(data.position < 4 && "league__results__table__top__teams")}
+                                ${(data.position > (datalist.length - 4) && "league__results__table__bottom__teams")}`
+                            }>{data?.team}</td>
+                            
                             <td>{data?.won}</td>
                             <td>{data?.loss}</td>
                             <td>{data?.draw}</td>

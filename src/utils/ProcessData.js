@@ -10,7 +10,11 @@ export default (rounds = []) => {
     })
 
     teamList.forEach((team) => {
-        var data = {team: '', won: 0, loss: 0, gf: 0, ga: 0, gd: 0, draw: 0, points: 0, lastestresults: []};
+        var data = {
+            position: 0, team: '', won: 0, loss: 0, gf: 0, 
+            ga: 0, gd: 0, draw: 0, points: 0, lastestresults: []
+        };
+        
         rounds.forEach((round) => {
             data.team = team;
             
@@ -61,9 +65,11 @@ export default (rounds = []) => {
     });
 
     dataLists.sort((a, b) => a.points > b.points ? 1 : -1)
-    .forEach((data) => data.lastestresults.sort((a, b) => a.date < b.date ? 1: -1)
-    .splice(5));
+    .forEach((data, index) => {
+        data.position = index + 1;
+        return data.lastestresults.sort((a, b) => a.date < b.date ? 1: -1).splice(5)
+    });
     
-    console.log(dataLists);
+    // console.log(dataLists);
     return dataLists;
 }

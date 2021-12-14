@@ -37,22 +37,12 @@
   }
 }
 
-.league__results__table__body__asc {
-  & > :nth-child(-n + 3) {
-    background: red;
-  }
-  & > :nth-last-child(-n + 4) {
-    background: green;
-  }
+.league__results__table__top__teams {
+  color: red;
 }
 
-.league__results__table__body__des {
-  & > :nth-child(-n + 4) {
-    background: green;
-  }
-  & > :nth-last-child(-n + 3) {
-    background: red;
-  }
+.league__results__table__bottom__teams {
+  color: green;
 }
 
 td.table__body__team__name {
